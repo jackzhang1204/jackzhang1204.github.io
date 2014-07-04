@@ -12,7 +12,6 @@
 		webm: "http://www.w3schools.com/html/mov_bbb.webm"
 	}
 	var state = "removed";
-	var recordTime = 0;
 	function addPlayer(){
 		if(state == "removed"){
 			var script = document.createElement('script');
@@ -24,14 +23,8 @@
 	}
 	function removePlayer(){
 		if(state == "added"){
-			recordTime = SewisePlayer.playTime();
 			$("#container").empty();
 			state = "removed";
-		}
-	}
-	function playerReady(name){
-		if(recordTime){
-			SewisePlayer.doSeek(recordTime);
 		}
 	}
 </script>
