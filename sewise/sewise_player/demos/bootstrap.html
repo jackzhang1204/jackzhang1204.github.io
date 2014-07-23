@@ -25,7 +25,7 @@
 	$('#myModal').on('shown.bs.modal', function(){
 		$('.player').css('width', $('.modal-dialog').width() + 'px');
 		$('.player').css('height', $('.modal-dialog').width() / 2 +'px');
-
+		
 		if(setuped){
 		   SewisePlayer.doPlay();
 		}else{
@@ -33,7 +33,11 @@
 				server : "vod",
 				type : "mp4",
 				skin : "vodFlowPlayer",
-				topbardisplay : 'disable'
+				topbardisplay : 'disable',
+				fallbackurls : {
+					ogg: "http://www.w3schools.com/html/mov_bbb.ogg",
+					webm: "http://www.w3schools.com/html/mov_bbb.webm"
+				}
 			});
 			SewisePlayer.toPlay('http://netdisk.foream.cn:8080/netdisk/iface/downloadOpen?fileId=29050&quality=1', 'neurocam wearable camera', 0, true);
 			setuped = true;
