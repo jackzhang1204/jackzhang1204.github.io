@@ -15,6 +15,8 @@
   <div class="modal-dialog">
     <div class="modal-content">
 	  <div id="player" class="player">
+	  	<script type="text/javascript">	
+	  	</script>
 	  	<script type="text/javascript" src="../player/sewise.player.min.js"></script>
 	  </div>
     </div>
@@ -22,6 +24,7 @@
 </div>
 <script type="text/javascript">
 	var setuped = false;
+	var isFlash = false;
 	$('#myModal').on('shown.bs.modal', function(){
 		$('.player').css('width', $('.modal-dialog').width() + 'px');
 		$('.player').css('height', $('.modal-dialog').width() / 2 +'px');
@@ -39,13 +42,23 @@
 					webm: "http://www.w3schools.com/html/mov_bbb.webm"
 				}
 			});
-			SewisePlayer.toPlay('http://netdisk.foream.cn:8080/netdisk/iface/downloadOpen?fileId=29050&quality=1', 'neurocam wearable camera', 0, true);
 			setuped = true;
+			try{
+				SewisePlayer.toPlay('http://netdisk.foream.cn:8080/netdisk/iface/downloadOpen?fileId=29050&quality=1', 'neurocam wearable camera', 0, true);
+			}catch(e){
+				isFlash = true;
+			};
 		}
 	});
 	$('#myModal').on('hide.bs.modal', function(){
 		SewisePlayer.doPause();
 	});
+	function playerReady(name){
+		//console.log("Sewise Player On Ready");
+		if(isFlash){
+			SewisePlayer.toPlay('http://netdisk.foream.cn:8080/netdisk/iface/downloadOpen?fileId=29050&quality=1', 'neurocam wearable camera', 0, true);
+		}
+	}
 </script>
 </body>
 </html>
