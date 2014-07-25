@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var styleText = ' .highlight { background-color: #000; color: #4F1; } p.highlight { background-color: #DDD; color:inherit; } ';
+		
+		var style = document.createElement('style');
+		style.setAttribute("type", "text/css");
+
+		if(style.textContent){
+			style.textContent = styleText;
+			//console.log("What");
+		}else if(style.styleSheet){
+			//IE
+			style.styleSheet.cssText = styleText;
+			//console.log("IE");
+		}else{
+			//Chrome, Firefox
+			style.innerHTML = styleText;
+			//console.log("Chrome, Firefox");
+		}
+
+		/*if(style.styleSheet){
+			//IE
+			style.styleSheet.cssText = styleText;
+			//console.log("IE");
+		}else{
+			//Chrome, Firefox
+			style.innerHTML = styleText;
+			//console.log("Chrome, Firefox");
+		}*/
+
+		document.getElementsByTagName('head')[0].appendChild(style);
+	</script>
+</body>
+<div>
+	<div>
+		<div>
+			<p class=" highlight">
+				<span time="1125" class=" ">嫦</span>
+				<span time="1305" class=" ">娥</span>
+				<span time="1405" class=" ">三</span>
+				<span time="1635" class=" highlight">号</span>
+				<span time="2885">玉</span>
+				<span time="3085">兔</span>
+				<span time="3265">号</span>
+				<span time="3415">巡</span>
+				<span time="3655">视</span>
+				<span time="3845">器</span>
+			</p>
+		</div>
+	</div>
+</div>
+</html>
