@@ -7,8 +7,78 @@
 	<title>Sewise Player</title>
 </head>
 <body>
-	<div style="width: 640px; height: 360px; ">
-		<script type="text/javascript" src="../player/sewise.player.min.js?server=live&type=m3u8&streamurl=http://115.28.244.16/live/151_1.m3u8&autostart=true&pid=&shifttime=&buffer=5&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=LiveVideo&skin=liveWhite"></script>
+	<div style="width: 600px;height: 400px;">
+		<script type="text/javascript" src="../player/sewise.player.min.js?server=vod&type=m3u8&videourl=http://www.codecomposer.net/hls/playlist.m3u8&sourceid=&autostart=true&starttime=0&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=Play-M3u8&buffer=5&claritybutton=disable&skin=vodWhite"></script>
+	</div>
+	<script>
+		//点播接口调用方法
+		function startPlay(){
+			SewisePlayer.doPlay();
+		}
+		function playPause(){
+			SewisePlayer.doPause();
+		}
+		function seekTo(){
+			SewisePlayer.doSeek(5);
+		}
+		function playStop(){
+			SewisePlayer.doStop();
+		}
+		function changeVolume(){
+			SewisePlayer.setVolume(0.1);
+		}
+		function getDuration(){
+			alert(SewisePlayer.duration());
+		}
+		function getPlayTime(){
+			alert(SewisePlayer.playTime());
+		}
+		// function switchProgram(){
+		// 	SewisePlayer.playProgram("xqfa3cZn", 0, true);
+		// }
+		function switchVideo(){
+			SewisePlayer.toPlay("http://playertest.longtailvideo.com/adaptive/customIV/prog_index.m3u8", "XXX", 0, true);
+		}
+
+		//播放器回调方法
+		function playerReady(name){
+			console.log("Sewise Player On Ready");
+			//SewisePlayer.toPlay("http://www.w3school.com.cn/i/movie.mp4", "title", 0, false);
+		}
+		function onStart(name){
+	        console.log("onStart");
+		}
+		function onStop(name){
+			 console.log("onStop");
+		}
+		function onMetadata(meta, name){
+			console.log("onMetadata");
+		}
+		function onClarity(clarity, name){
+			console.log("onClarity");
+		}
+		function onPause(name){
+			console.log("onPause");
+		}
+		function onSeek(time, name){
+			console.log("onSeek: " + time);
+		}
+		function onPlayTime(time, name){
+			console.log("onPlayTime: " + time);
+		}
+	</script>
+	<div style="padding-top: 20px;">
+		<div style="padding-right: 20px;float: left;">[点播接口]</div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:startPlay();">播放</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:playPause();">暂停</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:seekTo();">跳转</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:playStop();">停止</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:changeVolume();">更改音量</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:getDuration();">获取总时长</a></div>
+		<div style="padding-right: 20px;float: left;"><a href="javascript:getPlayTime();">获取当前时间</a></div>
+		<!-- <div style="padding-right: 20px;float: left;"><a href="javascript:switchProgram();">切换节目</a></div> -->
+		<div style="padding-right: 20px;float: left;"><a href="javascript:switchVideo();">切换视频</a></div>
+		<br clear="all"/>
 	</div>
 </body>
 </html>
