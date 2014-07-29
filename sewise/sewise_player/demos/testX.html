@@ -3,56 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TEST</title>
+	<!-- <style type="text/css">
+		._player_layout { 
+			height: 100%; width: 60%; float: left; 
+		}
+		._subtitles_layout { 
+			height: 100%; width: 36%; float: right; overflow: auto; 
+		}
+	</style> -->
 </head>
 <body>
 	<script type="text/javascript">
-		var styleText = ' .highlight { background-color: #000; color: #4F1; } p.highlight { background-color: #DDD; color:inherit; } ';
-		
+		var styleText = '._player_layout{ height: 100%; width: 60%; float: left; } ._subtitles_layout { height: 100%; width: 36%; float: right; overflow: auto; }';
 		var style = document.createElement('style');
 		style.setAttribute("type", "text/css");
-
 		if(style.textContent){
 			style.textContent = styleText;
-			//console.log("What");
 		}else if(style.styleSheet){
-			//IE
 			style.styleSheet.cssText = styleText;
-			//console.log("IE");
 		}else{
-			//Chrome, Firefox
 			style.innerHTML = styleText;
-			//console.log("Chrome, Firefox");
 		}
-
-		/*if(style.styleSheet){
-			//IE
-			style.styleSheet.cssText = styleText;
-			//console.log("IE");
-		}else{
-			//Chrome, Firefox
-			style.innerHTML = styleText;
-			//console.log("Chrome, Firefox");
-		}*/
-
 		document.getElementsByTagName('head')[0].appendChild(style);
 	</script>
 </body>
-<div>
-	<div>
-		<div>
-			<p class=" highlight">
-				<span time="1125" class=" ">嫦</span>
-				<span time="1305" class=" ">娥</span>
-				<span time="1405" class=" ">三</span>
-				<span time="1635" class=" highlight">号</span>
-				<span time="2885">玉</span>
-				<span time="3085">兔</span>
-				<span time="3265">号</span>
-				<span time="3415">巡</span>
-				<span time="3655">视</span>
-				<span time="3845">器</span>
-			</p>
+	<div style="width: 800px; height: 300px; border: 1px solid #CCC; padding: 2px; ">
+		<div class="_player_layout">
+			<div style="width: 100%; height: 100%; background-color: #DDD"></div>
+		</div>
+		<div class="_subtitles_layout">
+			嫦 娥 三 号 玉 兔 号 巡 视 器
 		</div>
 	</div>
-</div>
 </html>
