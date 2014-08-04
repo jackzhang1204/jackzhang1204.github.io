@@ -24,6 +24,9 @@
 		}
 	}
 	function removePlayer(){
+		if(window.SewisePlayer){
+			SewisePlayer.doStop();
+		}
 		if(state == "added"){
 			$("#container").empty();
 			state = "removed";
