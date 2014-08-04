@@ -39,11 +39,16 @@
 			var script = document.createElement('script');
 			script.type = "text/javascript";
 			script.src = srcPath + "&videosjsonurl=" + encodeURIComponent(JSON.stringify(videosjsonurl, "", "\t"));
-			$("#player").append(script);
+			//$("#player").append(script);
+			//用JQ的append方法动态添加脚本会使脚本被执行两次，从而造成在IE8时创建出两Flash播放器。所以这里改为原生动态添加脚本的方式。
+			$("#player").get(0).appendChild(script);
 			state = "added";
 		}
 	}
 	function removePlayer(){
+		if(window.SewisePlayer){
+			SewisePlayer.doStop();
+		}
 		if(state == "added"){
 			$("#player").empty();
 			state = "removed";

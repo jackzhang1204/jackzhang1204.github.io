@@ -17,7 +17,9 @@
 			var script = document.createElement('script');
 			script.type = "text/javascript";
 			script.src = srcPath + "&fallbackurls=" + encodeURIComponent(JSON.stringify(fallbackurls, "", "\t"));
-			$("#container").append(script);
+			//$("#container").append(script);
+			//用JQ的append方法动态添加脚本会造成脚本被执行两次，所以这里改为原生动态添加脚本的方式。
+			$("#container").get(0).appendChild(script);
 			state = "added";
 		}
 	}

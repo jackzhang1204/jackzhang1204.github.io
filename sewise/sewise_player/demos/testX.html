@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>TEST</title>
-	<!-- <style type="text/css">
-		._player_layout { 
-			height: 100%; width: 60%; float: left; 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Sewise Player</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+	var srcPath = "../player/sewise.player.min.js?server=vod&type=mp4&videourl=http://www.w3schools.com/html/mov_bbb.mp4&sourceid=&autostart=true&starttime=0&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=VodVideo&buffer=5&skin=vodWhite";
+	var fallbackurls = {
+		ogg: "http://www.w3schools.com/html/mov_bbb.ogg",
+		webm: "http://www.w3schools.com/html/mov_bbb.webm"
+	}
+	var state = "removed";
+	function addPlayer(){
+		if(state == "removed"){
+			var script = document.createElement('script');
+			script.type = "text/javascript";
+			script.src = srcPath + "&fallbackurls=" + encodeURIComponent(JSON.stringify(fallbackurls, "", "\t"));
+			$("#container").append(script);
+			//用JQ的append方法动态添加脚本会造成脚本被执行两次，所以这里改为原生动态添加脚本的方式。
+			//$("#container").get(0).appendChild(script);
+			state = "added";
 		}
-		._subtitles_layout { 
-			height: 100%; width: 36%; float: right; overflow: auto; 
+	}
+	function removePlayer(){
+		if(window.SewisePlayer){
+			SewisePlayer.doStop();
 		}
-	</style> -->
+		if(state == "added"){
+			$("#container").empty();
+			state = "removed";
+		}
+	}
+</script>
 </head>
 <body>
-	<script type="text/javascript">
-		var styleText = '._player_layout{ height: 100%; width: 60%; float: left; } ._subtitles_layout { height: 100%; width: 36%; float: right; overflow: auto; }';
-		var style = document.createElement('style');
-		style.setAttribute("type", "text/css");
-		if(style.textContent){
-			style.textContent = styleText;
-		}else if(style.styleSheet){
-			style.styleSheet.cssText = styleText;
-		}else{
-			style.innerHTML = styleText;
-		}
-		document.getElementsByTagName('head')[0].appendChild(style);
-	</script>
-</body>
-	<div style="width: 800px; height: 300px; border: 1px solid #CCC; padding: 2px; ">
-		<div class="_player_layout">
-			<div style="width: 100%; height: 100%; background-color: #DDD"></div>
+	<div>
+		<div id="container" style="width: 640px; height: 352px; border: solid 1px #DDD"></div>
+		<div>
+		<div style="padding: 10px;">
+			<button onclick="addPlayer()">Add Player</button>
+			<button onclick="removePlayer()">Remove Player</button>
 		</div>
-		<div class="_subtitles_layout">
-			嫦 娥 三 号 玉 兔 号 巡 视 器
 		</div>
+		<div style="padding: 20px;float: left;">注：请在Web环境下预览该文件。</div>
 	</div>
+</body>
 </html>

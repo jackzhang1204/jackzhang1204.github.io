@@ -1,84 +1,49 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-	<title>Sewise Player</title>
-</head>
-<body>
-	<div style="width: 600px;height: 400px;">
-		<script type="text/javascript" src="../player/sewise.player.min.js?server=vod&type=m3u8&videourl=http://www.codecomposer.net/hls/playlist.m3u8&sourceid=&autostart=true&starttime=0&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=Play-M3u8&buffer=5&claritybutton=disable&skin=vodWhite"></script>
-	</div>
-	<script>
-		//点播接口调用方法
-		function startPlay(){
-			SewisePlayer.doPlay();
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Sewise Player</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+	var srcPath = "../player/sewise.player.min.js?server=vod&type=mp4&videourl=http://www.w3schools.com/html/mov_bbb.mp4&sourceid=&autostart=true&starttime=0&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=VodVideo&buffer=5&skin=vodWhite";
+	var fallbackurls = {
+		ogg: "http://www.w3schools.com/html/mov_bbb.ogg",
+		webm: "http://www.w3schools.com/html/mov_bbb.webm"
+	}
+	var state = "removed";
+	function addPlayer(){
+		if(state == "removed"){
+			var script = document.createElement('script');
+			script.type = "text/javascript";
+			script.src = srcPath + "&fallbackurls=" + encodeURIComponent(JSON.stringify(fallbackurls, "", "\t"));
+			//$("#container").append(script);
+			//用JQ的append方法动态添加脚本会造成脚本被执行两次，所以这里改为原生动态添加脚本的方式。
+			$("#container").get(0).appendChild(script);
+			state = "added";
 		}
-		function playPause(){
-			SewisePlayer.doPause();
-		}
-		function seekTo(){
-			SewisePlayer.doSeek(5);
-		}
-		function playStop(){
+	}
+	function removePlayer(){
+		if(window.SewisePlayer){
 			SewisePlayer.doStop();
 		}
-		function changeVolume(){
-			SewisePlayer.setVolume(0.1);
+		if(state == "added"){
+			$("#container").empty();
+			state = "removed";
 		}
-		function getDuration(){
-			alert(SewisePlayer.duration());
-		}
-		function getPlayTime(){
-			alert(SewisePlayer.playTime());
-		}
-		// function switchProgram(){
-		// 	SewisePlayer.playProgram("xqfa3cZn", 0, true);
-		// }
-		function switchVideo(){
-			SewisePlayer.toPlay("http://playertest.longtailvideo.com/adaptive/customIV/prog_index.m3u8", "XXX", 0, true);
-		}
-
-		//播放器回调方法
-		function playerReady(name){
-			console.log("Sewise Player On Ready");
-			//SewisePlayer.toPlay("http://www.w3school.com.cn/i/movie.mp4", "title", 0, false);
-		}
-		function onStart(name){
-	        console.log("onStart");
-		}
-		function onStop(name){
-			 console.log("onStop");
-		}
-		function onMetadata(meta, name){
-			console.log("onMetadata");
-		}
-		function onClarity(clarity, name){
-			console.log("onClarity");
-		}
-		function onPause(name){
-			console.log("onPause");
-		}
-		function onSeek(time, name){
-			console.log("onSeek: " + time);
-		}
-		function onPlayTime(time, name){
-			console.log("onPlayTime: " + time);
-		}
-	</script>
-	<div style="padding-top: 20px;">
-		<div style="padding-right: 20px;float: left;">[点播接口]</div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:startPlay();">播放</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:playPause();">暂停</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:seekTo();">跳转</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:playStop();">停止</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:changeVolume();">更改音量</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:getDuration();">获取总时长</a></div>
-		<div style="padding-right: 20px;float: left;"><a href="javascript:getPlayTime();">获取当前时间</a></div>
-		<!-- <div style="padding-right: 20px;float: left;"><a href="javascript:switchProgram();">切换节目</a></div> -->
-		<div style="padding-right: 20px;float: left;"><a href="javascript:switchVideo();">切换视频</a></div>
-		<br clear="all"/>
+	}
+</script>
+</head>
+<body>
+	<div>
+		<div id="container" style="width: 640px; height: 352px; border: solid 1px #DDD"></div>
+		<div>
+		<div style="padding: 10px;">
+			<button onclick="addPlayer()">Add Player</button>
+			<button onclick="removePlayer()">Remove Player</button>
+		</div>
+		</div>
+		<div style="padding: 20px;float: left;">注：请在Web环境下预览该文件。</div>
 	</div>
 </body>
 </html>
