@@ -161,20 +161,19 @@ div.sewise-player-ui div.controlbar ul.controlbar-btns li a.controlbar-btns-soun
 div.sewise-player-ui div.controlbar ul.controlbar-btns li a.controlbar-btns-soundopen:hover {
 	background: url("controlbar.png") -38px -150px no-repeat;
 }
-
-/*
 div.sewise-player-ui div.controlbar ul.controlbar-btns li a.controlbar-btns-share {
 	background: url("controlbar.png") 0px -330px no-repeat;
 }
 div.sewise-player-ui div.controlbar ul.controlbar-btns li a.controlbar-btns-share:hover {
 	background: url("controlbar.png") -38px -330px no-repeat;
-}*/
+}
 
 div.sewise-player-ui div.controlbar ul.controlbar-btns div.controlbar-playtime {
 	position: relative;
 	float: right;
 	display: block;
-	width: 118px;
+	//width: 118px;
+	width: 88px;
 	height: 30px;
 	right: 6px;
 	color: black;
