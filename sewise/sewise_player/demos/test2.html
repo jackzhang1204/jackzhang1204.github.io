@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>TEST</title>
-</head>
-<body>
-	<script type="text/javascript">
-		var styleText = '._player_layout{ height: 100%; width: 60%; float: left; } ._subtitles_layout { height: 100%; width: 36%; float: right; overflow: auto; }';
-		var style = document.createElement('style');
-		style.setAttribute("type", "text/css");
-		if(style.textContent){
-			style.textContent = styleText;
-		}else if(style.styleSheet){
-			style.styleSheet.cssText = styleText;
-		}else{
-			style.innerHTML = styleText;
-		}
-		document.getElementsByTagName('head')[0].appendChild(style);
-	</script>
-	<div style="width: 800px; height: 300px; border: 1px solid #CCC; padding: 2px; ">
-		<div class="_player_layout">
-			<div style="width: 100%; height: 100%; background-color: #DDD"></div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>m3u8 sample</title>
+	</head>
+	<body>
+		<div style="width: 600px;height: 400px;">
+			<script type="text/javascript" src="../player/sewise.player.min.js?server=vod&type=m3u8&videourl=http://115.238.155.183:3001/api/v1/hls/mgf7n7k7.m3u8&autostart=true&starttime=0&lang=en_US&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&title=Play-M3u8&buffer=5&claritybutton=disable&skin=vodWhite"></script>
 		</div>
-		<div class="_subtitles_layout">
-			嫦 娥 三 号 玉 兔 号 巡 视 器
-		</div>
-	</div>
-</body>
+		<div style="padding: 20px;float: left;">注：如果当前设备为Mobile平台，播放器将自动启用HTML5播放模块播放m3u8文件。</div>
+		<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fock it on GitHub</a></div>
+	</body>
 </html>
