@@ -7,14 +7,14 @@
 	<title>Sewise Player</title>
 </head>
 <body>
-	<div style="width: 640px; height: 352px; ">
+	<div id="container" style="width: 600px; height: 400px; border: solid 2px #CCC; ">
 		<script type="text/javascript" src="../player/sewise.player.min.js"></script>
 		<script type="text/javascript">
 			SewisePlayer.setup({
 				server: "vod",
 				type: "m3u8",
-				videourl: "http://115.238.155.183:3001/api/v1/hls/i1g7i3o4/timeshift/play/1409592931111_1409667605615.m3u8",
-		        skin: "vodWhite",
+				videourl: "http://116.77.32.202:5080/data/userdata/vod/resource/201408/21141727.flv.m3u8",
+		        //skin: "vodWhite",
 		        title: "M3U8大文件测试",
 		        claritybutton: "disable",
 		        lang: 'zh_CN'
@@ -22,6 +22,15 @@
 		</script>
 
 	</div>
+	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="javascript:changeSize();">改变播放器尺寸</a></div>
 	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fock it on GitHub</a></div>
+
+	<script type="text/javascript">
+		function changeSize(){
+        	var container = document.getElementById("container");
+        	container.style.width = "900px";
+        	container.style.height = "360px";
+        }
+	</script>
 </body>
 </html>
