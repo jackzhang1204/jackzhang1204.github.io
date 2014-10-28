@@ -7,19 +7,20 @@
 	<title>Sewise Player</title>
 </head>
 <body>
-	<div style="width: 600px; height: 200px; ">
+	<div style="width: 640px; height: 352px; ">
 		<script type="text/javascript" src="../player/sewise.player.min.js"></script>
 		<script type="text/javascript">
 			SewisePlayer.setup({
-				server: "live",
-				type: "mp4",
-				streamurl: "http://jackzhang1204.github.io/materials/mov_bbb.mp4",
-		        skin: "liveRadio",
-		        title: "直播音频",
+				server: "vod",
+				type: "m3u8",
+				autostart: "true",
+				videourl: "http://hep2d-2.qiniudn.com/8271ebd3bb299d0b0323aa3775650786.mp4.m3u8?e=1414491181&token=keYlHv05wHdZq-yzmgdw_Zw7EZizy-mLGoOa7Rew:kVnWaJVR1av9G1LQfBqXPyjp_LY=",
+		        skin: "vodWhite",
+		        title: "Live M3U8",
 		        lang: 'zh_CN'
 			});
 		</script>
-		
+
 	</div>
 	<div style="padding: 20px;float: left;">注：如果当前设备为Mobile平台，播放器将自动启用HTML5播放模块播放m3u8文件。</div>
 	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fork it on GitHub</a></div>
