@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>Sewise Player</title>
+	
+</head>
+<body>
+	<script type="text/javascript">
+		var browser = {
+			versions: function(){
+	           	var u = navigator.userAgent, app = navigator.appVersion; 
+	           	return {
+	           				trident: u.indexOf('Trident') > -1, 										//IE内核
+			                presto: u.indexOf('Presto') > -1, 											//opera内核
+			                webKit: u.indexOf('AppleWebKit') > -1,										//苹果、谷歌内核
+			                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, 				//火狐内核
+			                mobile: !!u.match(/AppleWebKit.*Mobile.*/),									//是否为移动终端
+			                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),							//ios终端
+			                android: u.indexOf('Android') > -1,											//android终端
+			                iPhone: u.indexOf('iPhone') > -1,											//是否为iPhone
+			                iPad: u.indexOf('iPad') > -1,												//是否iPad
+			            	webApp: u.indexOf('Safari') == -1											//是否web应该程序，没有头部与底部
+		            	};
+	 		}(),
+	 		supportH5: function(){																		//是否支持HTML5特性
+	 			var isH5 = false;
+	 			if(navigator.geolocation){
+	 				isH5 = true;
+	 			}
+	 			return isH5;
+	 		}(),
+	 		supportFlash: function(){																	//是否支持Flash特性
+	 			if(navigator.mimeTypes.length > 0){
+	                var flashAct = navigator.mimeTypes["application/x-shockwave-flash"];
+	                return flashAct !== undefined ? flashAct.enabledPlugin !== undefined : false;
+	            }else if(self.ActiveXObject){
+	                try{
+	                    new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+	                    return true;
+	                }catch(oError){
+	                    return false;
+	                }
+	            }
+	 		}(),
+	 		language: (navigator.browserLanguage || navigator.language).toLowerCase()
+		}
+
+		var isMobile = browser.versions.mobile;
+		var supportH5 = browser.supportH5;
+		var supportFlash = browser.supportFlash;
+		alert("isMobile: " + isMobile);
+		alert("supportH5: " + supportH5);
+		alert("supportFlash: " + supportFlash);
+		
+		
+	</script>
+</body>
+</html>
