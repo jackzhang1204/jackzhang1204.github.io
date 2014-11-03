@@ -7,9 +7,15 @@
 	<title>Sewise Player</title>
 </head>
 <body>
-	<div style="width: 640px; height: 480px; ">
-		<script type="text/javascript" src="../player/sewise.player.min.js?server=live&type=rtmp&streamurl=rtmp://115.238.155.183:49170/livestream/mgf7n7k7&autostart=true&buffer=5&lang=zh_CN&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&poster=&title=LiveVideo&skin=liveWhite"></script>
+	<div style="width: 600px; height: 400px; ">
+		<video id="video" width="600" height="400" controls="controls" src="http://jackzhang1204.github.io/materials/mov_bbb.mp4"></video>
 	</div>
-	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fock it on GitHub</a></div>
+	<button onclick=startPlay()>Play</button>
+	<script type="text/javascript">
+		function startPlay(){
+			var video = document.getElementById("video");
+			video.play();
+		}
+	</script>
 </body>
 </html>
