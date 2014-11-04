@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jqueryJSONP</title>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+  <div>
+    <script>
+      $.ajax({
+          type: "post",
+          async: false,
+          url: "http://app.rdttv.com:81/index.php",
+          dataType: "json",
+          data:{
+            "mod":"api",
+            "do":"showtime",
+            "eid":"1181",
+            "devid":"863654027668599",
+            "intervallen":10
+          },
+
+          success :function(data){
+              console.log(data);
+          },
+          
+          error:function(){
+              console.log('fail');
+          }
+
+      });
+
+
+    </script>
+  </div>
+</body>
+</html>
