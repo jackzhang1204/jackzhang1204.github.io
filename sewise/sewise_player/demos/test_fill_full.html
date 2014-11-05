@@ -5,11 +5,50 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 	<title>Sewise Player</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style type="text/css">
+		input{
+			width: 80px;
+		}
+		div{
+			padding: 10px;
+		}
+	</style>
 </head>
 <body>
-	<div style="width: 640px; height: 360px; ">
-		<script type="text/javascript" src="../player/sewise.player.min.js?server=live&type=rtmp&streamurl=rtmp://219.232.161.204/livestream/mtzysunq&autostart=true&buffer=5&lang=zh_CN&logo=http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png&poster=http://www.sewise.com/data/attachment/portal/201402/10/120117q992dwsgns5cxzoz.png&title=LiveVideo&skin=liveOrange_full"></script>
+	<div id="player" style="width: 640px; height: 360px; ">
+		<script type="text/javascript" src="../player/sewise.player.min.js"></script>
+		<script type="text/javascript">
+			SewisePlayer.setup({
+				server: "live",
+				type: "rtmp",
+				autostart: "true",
+				streamurl: "rtmp://219.232.161.204/livestream/mtzysunq",
+		        logo: "http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png",
+		        title: "Video Fill Full",
+		        lang: 'zh_CN',
+		        skin: "liveOrange_full"
+			});
+		</script>
 	</div>
+	<div>
+		提示：您可以在下面的输入框内设置播放器的宽度和高度，然后通过点击“改变尺寸”按钮动态改变播放器的尺寸。
+		<div>
+			宽度:
+			<input type="text" id="inputW" value="900" />
+			<br/>
+			高度: 
+			<input type="text" id="inputH" value="300" />
+		</div>
+		<button id="changBtn">改变尺寸</button>
+	</div>
+	<script type="text/javascript">
+		$("#changBtn").click(function(){
+			$("#player").width($("#inputW").val());
+			$("#player").height($("#inputH").val());
+		});
+	</script>
+
 	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fork it on GitHub</a></div>
 </body>
 </html>
