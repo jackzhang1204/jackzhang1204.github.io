@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>less-12px</title>
+</head>
+<body>
+	<div id="player" style="float: left; ">
+		<script src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js"></script> 
+	　　<script>
+			var channel_id = '931734290';
+		　　var video = new tvp.VideoInfo();
+		　　video.setChannelId(channel_id);
+		　　var player = new tvp.Player();
+		　　player.create({
+			　　type: 1,
+			　　video: video,
+			　　width: '600px',
+			　　height: '400px',
+			　　modId: 'player',
+			　　autoplay: true
+		　　});
+			
+			console.log(video);
+			
+	　　</script>
+	</div>
+</body>
+</html>
