@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta http-equiv="content-script-type" content="text/javascript">
+<title>SewiseCut</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div id="cut-player" style="width: 1000px; height: 600px; ">
+    	<!-- vod请求地址测试, 可以向后端提交剪切数据-->
+    	<!-- <script type="text/javascript" src="sewise.cut.min.js?url=vod://192.168.1.24:80/3PNuqrZf&callback=http://192.168.1.38/test.php&videoname=video%20%3F%20%E8%A7%86%E9%A2%91&debug=true"></script> -->
+
+    	<!-- 直接地址UI交互测试, 无法向后端提交剪切数据-->
+    	<script type="text/javascript" src="sewise.cut.min.js?url=http://219.232.161.202:5080/flvseek/data/userdata/vod/resource/201402/OVNNwRk1.flv&starttime=2014-11-07 00:00:00&endtime=2014-11-07 00:16:14&videoname=video%20%3F%20%E8%A7%86%E9%A2%91&debug=true"></script>
+
+    </div>
+
+    <div>
+		提示：您可以在下面的输入框内设置宽度和高度，然后通过点击“改变尺寸”按钮动态改界面的尺寸。
+		<div>
+			宽度:
+			<input type="text" id="inputW" value="1200" />
+			<br/>
+			高度: 
+			<input type="text" id="inputH" value="900" />
+		</div>
+		<button id="changBtn">改变尺寸</button>
+	</div>
+	<script type="text/javascript">
+		$("#changBtn").click(function(){
+			$("#cut-player").width($("#inputW").val());
+			$("#cut-player").height($("#inputH").val());
+		});
+	</script>
+	
+	<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-cut-player" target="_blank">Fork it on GitHub</a></div>
+</body>
+</html>
