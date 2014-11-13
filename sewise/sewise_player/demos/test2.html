@@ -1,34 +1,28 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>sewise播放器－测试页面</title>
-		<script charset="utf-8" type="text/javascript" language="JavaScript" src="../player/js/swfobject.js"></script>
-		<script language="JavaScript" charset="utf-8" type="text/javascript">
-			var player;
-			var streamUrl = "rtmp://219.232.161.204/livestream/mtzysunq";
-			var flashvars = {
-				autoStart        : 'true',
-				type             : 'rtmp',
-				skin             : '../player/flash/skins/liveOrange.swf',
-				streamUrl        : streamUrl,
-                duration         : 3600,
-				logo             : ''
-			};
-			window.onload = function() {
-				swfobject.embedSWF("../player/flash/SewisePlayer.swf", "swf-container", "100%", "100%", "9.0.115", false, flashvars);
-			}
-			function playerReady(id) {
-				player = document.getElementById("swf-container");
-			}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<title>Sewise Player</title>
+</head>
+<body>
+	<div style="width: 640px; height: 352px; ">
+		<script type="text/javascript" src="../player/sewise.player.min.js"></script>
+		<script type="text/javascript">
+			SewisePlayer.setup({
+				server: "vod",
+				type: "m3u8",
+				autostart: "true",
+				videourl: "http://123.57.33.145:8080/live/30.m3u8",
+		        skin: "vodWhite",
+		        title: "Live M3U8",
+		        lang: 'zh_CN'
+			});
 		</script>
-	</head>
-	<body>
-		<div style="width: 800px;height: 450px;">
-			<div id="swf-container">
-				加载播放器……
-			</div>
-		</div>
-	</body>
+
+	</div>
+	<div style="padding: 20px;float: left;">注：如果当前平台为PC，播放器将启用Flash播放m3u8文件。如果当前平台为Mobile，播放器将启用HTML5播放m3u8文件。</div>
+		<div style="float: left; width: 100%; padding: 10px 30px; "><a href="https://github.com/jackzhang1204/sewise-player" target="_blank">Fork it on GitHub</a></div>
+</body>
 </html>
