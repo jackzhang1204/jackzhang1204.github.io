@@ -12,10 +12,11 @@
 	</div>
 	<button onclick=startPlay()>Play</button>
 	<script type="text/javascript">
-		setTimeout(function startPlay(){
+		setTimeout(startPlay, 3000);
+		function startPlay(){
 			var video = document.getElementById("video");
 			video.play();
-		}, 3000);
+		}
 	</script>
 </body>
 </html>
