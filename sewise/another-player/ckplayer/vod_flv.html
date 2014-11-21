@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+<title>ckplayer</title>
+</head>
+<body>
+<div id="a1"></div>
+    <script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var flashvars={
+            f: 'http://219.232.161.202:5080/flvseek/data/userdata/vod/resource/201402/OVNNwRk1.flv',
+            c: 1,
+            b: 1,
+            q: 'start'
+        };
+
+        var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+        CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params); 
+        
+        function closelights(){//关灯
+            alert(' 本演示不支持开关灯');
+        }
+        function openlights(){//开灯
+            alert(' 本演示不支持开关灯');
+        }
+    </script>
+</body>
+</html>
