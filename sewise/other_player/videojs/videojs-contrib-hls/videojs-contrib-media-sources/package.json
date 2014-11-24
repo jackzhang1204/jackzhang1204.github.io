@@ -1,0 +1,48 @@
+{
+  "name": "videojs-contrib-media-sources",
+  "version": "0.3.0",
+  "description": "A Media Source Extensions plugin for video.js",
+  "main": "videojs-media-sources.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/videojs/video-js-media-sources.git"
+  },
+  "keywords": [
+    "video.js",
+    "mse",
+    "media",
+    "source",
+    "extensions",
+    "video",
+    "html",
+    "flash",
+    "video"
+  ],
+  "author": {
+    "name": "Brightcove"
+  },
+  "license": "Apache 2",
+  "gitHead": "3374dc863816b74f90a62275c42ff3f1aca0a523",
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-qunit": "^0.4.0",
+    "qunitjs": "^1.14.0",
+    "video.js": "git+ssh://git@github.com:dmlap/video-js.git#0.6.1-alpha"
+  },
+  "readme": "# videojs-media-sources\n\nA [Media Source Extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html) plugin for video.js.\n\nMedia Source Extensions (MSE) is a W3C draft specification that makes it possible to feed data directly to a video element.\nMSE allows video developers to build functionality like adaptive streaming directly in javascript.\n\n## Getting Started\n\nThe plugin exposes a MediaSource shim that can be used to feed dynamic content to a video element.\nOn browsers that natively support Media Source Extensions, the HTML implementation will be used.\nIf you're running in an environment without MSE, a Flash-backed polyfill will be used.\nCurrently, the Flash polyfill only supports video content encoded in the FLV file format.\nFor information on how FLVs are structured, Adobe hosts the [latest version of the spec](http://www.adobe.com/devnet/f4v.html) on their site.\n\nThe Flash polyfill attempts to balance throughput to the FLV with end-user responsiveness by asynchronously feeding bytes to the SWF at a fixed rate.\nBy default, that rate is capped at 4MB/s.\nIf you'd like to play higher bitrate content, you can adjust that setting:\n\n```javascript\n// 8MB/s at 60fps\nvideojs.MediaSource.MAX_APPEND_SIZE = Math.ceil((8 * 1024 * 1024) / 60);\n```\nSetting the `MAX_APPEND_SIZE` too high may lead to dropped frames during playback on slower computers.\n\nCheck out an example of the plugin in use in [example.html](example.html).\n\n## Release History\n\n * 0.3.0: Delegate SourceBuffer.abort() calls to the SWF\n * 0.2.0: Improve interactivity by batching communication with Flash.\n * 0.1.0: Initial release\n\n## License\n\nSee [LICENSE-APACHE2](LICENSE-APACHE2).\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/videojs/video-js-media-sources/issues"
+  },
+  "_id": "videojs-contrib-media-sources@0.3.0",
+  "dist": {
+    "shasum": "5a16d2eb4b155a2b06943a22eebdf2d93857456e"
+  },
+  "_from": "videojs-contrib-media-sources@^0.3.0",
+  "_resolved": "https://registry.npmjs.org/videojs-contrib-media-sources/-/videojs-contrib-media-sources-0.3.0.tgz"
+}
