@@ -10,8 +10,8 @@
             	"link":"http://www.baidu.com/",
             	"date":"2014.11.28"
             };
-            var custom_datas_str = JSON.stringify(custom_datas);
-            //console.log(custom_datas_str);
+            var custom_datas_str = encodeURIComponent(JSON.stringify(custom_datas));
+            console.log(custom_datas_str);
 
 			var flashvars = {
 				type        	 : 'http',
