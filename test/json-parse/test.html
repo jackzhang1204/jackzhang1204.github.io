@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>sewise播放器－测试页面</title>
+		<script type="text/javascript" src="swfobject.js"></script>
+		<script type="text/javascript">
+			var player;
+			var custom_datas = {
+            	"link":"http://www.baidu.com/",
+            	"date":"2014.11.28"
+            };
+            var custom_datas_str = JSON.stringify(custom_datas);
+            //console.log(custom_datas_str);
+
+			var flashvars = {
+				type        	 : 'http',
+				customDatas      : custom_datas_str
+			};
+			var params = {
+				allowfullscreen   : true,
+				wmode             : "transparent",
+				allowscriptaccess : 'always'
+			};
+			var attributes = {
+				id : 'test',
+				name : 'test'
+			};
+			window.onload = function() {
+				swfobject.embedSWF("test.swf", "swf-container", "100%", "100%", "9.0.115", false, flashvars, params, attributes);
+			}
+
+			function playerReady(param){
+                //console.log("playerReady");
+                console.log("retrun: " + param);
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="container" style="width: 500px; height: 400px; border: solid 1px #DDD; ">
+			<div id="swf-container">
+				加载播放器……
+			</div>
+		</div>
+		<div style="padding-top: 20px;">
+			<div style="padding-right: 20px;float: left;">[接口]</div>
+		</div>
+	</body>
+</html>
