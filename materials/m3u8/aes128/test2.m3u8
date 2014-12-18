@@ -5,11 +5,11 @@
 #EXT-X-TARGETDURATION:12
 #EXT-X-KEY:METHOD=AES-128,URI="https://jackzhang1204.github.io/materials/m3u8/aes128/key",IV=0x66127555546679185880550134184149,KEYFORMAT="identity"
 #EXTINF:10.009,
-https//jackzhang1204.github.io/materials/m3u8/aes128/0.ts
-#EXT-X-KEY:METHOD=AES-128,URI="https//jackzhang1204.github.io/materials/m3u8/aes128/key",IV=0x66127555546679185880550134184149,KEYFORMAT="identity"
+http://jackzhang1204.github.io/materials/m3u8/aes128/0.ts
+#EXT-X-KEY:METHOD=AES-128,URI="https://jackzhang1204.github.io/materials/m3u8/aes128/key",IV=0x66127555546679185880550134184149,KEYFORMAT="identity"
 #EXTINF:11.0,
-https//jackzhang1204.github.io/materials/m3u8/aes128/1.ts
-#EXT-X-KEY:METHOD=AES-128,URI="https//jackzhang1204.github.io/materials/m3u8/aes128/key",IV=0x66127555546679185880550134184149,KEYFORMAT="identity"
+http://jackzhang1204.github.io/materials/m3u8/aes128/1.ts
+#EXT-X-KEY:METHOD=AES-128,URI="https://jackzhang1204.github.io/materials/m3u8/aes128/key",IV=0x66127555546679185880550134184149,KEYFORMAT="identity"
 #EXTINF:10.992,
-https//jackzhang1204.github.io/materials/m3u8/aes128/2.ts
+http://jackzhang1204.github.io/materials/m3u8/aes128/2.ts
 #EXT-X-ENDLIST
