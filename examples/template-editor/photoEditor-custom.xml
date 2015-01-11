@@ -1,0 +1,68 @@
+<template type="customTemplate" demoWidth="720" demoHeight="540" bgColor="0x000000" img="res/photo1.jpg" fillStyle="stretch">
+  <component type="background">
+    <property x="0" y="0" width="720.15" height="1080" scaleX="1" scaleY="1" rotation="0" alpha="0.05" depth="0" />
+    <info url="material/background/bg006.swf" />
+  </component>
+  <component type="photoArea">
+   <property x="168" y="34" width="467" height="352" scaleX="0.8844757080078125" scaleY="0.884429931640625" rotation="0" alpha="1" depth="1" />
+    <info url="material/photoArea/pa011.swf" />
+  </component>
+  <component type="movieClip">
+    <property x="-1" y="182" width="722" height="360" scaleX="1.0027778148651123" scaleY="1" rotation="0" alpha="1" depth="2" />
+    <info url="material/movieClip/mc_statue.swf" />
+  </component>
+  <component type="thumbnail">
+    <property x="201" y="413.5" width="502" height="97.05" scaleX="0.969111979007721" scaleY="0.9686240553855896" rotation="-1.2975649000555724e-14" alpha="1" depth="3" />
+    <info url="material/thumbnail/th013.swf" />
+  </component>
+  <component type="title">
+    <property x="196" y="7" width="380" height="20" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="4" />
+    <info url="material/title/ti001.swf" />
+  </component>
+  <component type="controlButton">
+    <property x="131" y="262" width="17.15" height="121.9" scaleX="0.9523773193359375" scaleY="0.953216552734375" rotation="-90" alpha="1" depth="5" />
+    <info url="material/controlButton/cb009.swf" />
+  </component>
+  
+	<component type="textEffect">
+		<property x="100" y="100" width="" height="" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="" />
+		<info url="">
+			<textData copyright="anvsoftTextEffectEditor">
+				<textInfo>
+					<text>
+http://www.photo-flash-maker.com
+					</text>
+					<format font="Arial Black" color="0x0000ff" size="44" align="left" bold="false" italic="false" underline="false" embedFonts="false"/>
+					<shadow distance="5" angle="45" color="0x000000" alpha="80" blur="8" strength="100"/>
+				</textInfo>
+				<effectInfo>
+					<entrance name="FadeIn" startEffectTime="0" entranceTime="2" effectTime="2"/>
+					<exit name="FadeOut" exitTime="2"/>
+					<interaction specifiedLoopTimes="true" loopTime="2" visibleAfterLoopOver="false"/>
+				</effectInfo>
+			</textData>
+		</info>
+		<hyperlink url="http://www.photo-flash-maker.com/" target="0"/>
+	</component>
+	
+	<component type="textEffect">
+		<property x="0" y="200" width="" height="" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="" />
+		<info url="">
+			<textData copyright="anvsoftTextEffectEditor">
+				<textInfo>
+					<text>
+http://www.anvsoft.com
+					</text>
+					<format font="Arial" color="0x00ffff" size="60" align="center" bold="false" italic="false" underline="false" embedFonts="false"/>
+					<shadow distance="5" angle="45" color="0x0000ff" alpha="80" blur="8" strength="100"/>
+				</textInfo>
+				<effectInfo>
+					<entrance name="Swing" startEffectTime="2" entranceTime="2" effectTime="2"/>
+					<exit name="ToppleBackward" exitTime="2"/>
+					<interaction specifiedLoopTimes="false" loopTime="2" visibleAfterLoopOver="false"/>
+				</effectInfo>
+			</textData>
+		</info>
+		<hyperlink url="http://www.anvsoft.com" target="1"/>
+	</component>
+</template>

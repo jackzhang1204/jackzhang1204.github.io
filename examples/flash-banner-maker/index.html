@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>测试页面</title>
+		<script charset="utf-8" type="text/javascript" language="JavaScript" src="swfobject.js"></script>
+		<script language="JavaScript" charset="utf-8" type="text/javascript">
+			var flashvars = {
+
+			};
+			var params = {
+				allowfullscreen   : true,
+				wmode             : "transparent",
+				allowscriptaccess : 'always'
+			};
+			var attributes = {
+				id : 'player',
+				name : 'player'
+			};
+			
+			window.onload = function() {
+				swfobject.embedSWF("FlashBannerMaker.swf", "swf-container", "100%", "100%", "10.0", false, flashvars, params, attributes);
+			}
+		</script>
+	</head>
+	<body>
+		<div style="width: 1200px; height: 600px; ">
+			<div id="swf-container">
+				加载……
+			</div>
+		</div>
+	</body>
+</html>

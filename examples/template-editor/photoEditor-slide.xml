@@ -1,0 +1,6 @@
+<template type="photoEditor" demoWidth="720" demoHeight="540" bgColor="0x000000" img="res/photo1.jpg" fillStyle="fill">
+  <component type="photoArea">
+    <property x="0" y="135" width="720" height="270" scaleX="1" scaleY="0.5" rotation="0" alpha="1" depth="-1" />
+    <info url="res/template.swf" />
+  </component>
+</template>

@@ -1,0 +1,64 @@
+<template type="customTemplate" demoWidth="720" demoHeight="540" bgColor="0" img="res/photo1.jpg" fillStyle="stretch">
+	<component type="textEffect">
+		<property x="100" y="100" width="" height="" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="0" />
+		<info url="">
+			<textData copyright="anvsoftTextEffectEditor">
+				<textInfo>
+					<text>
+Photo Flash Maker.
+					</text>
+					<format font="Arial Black" color="0x66ffff" size="60" align="left" bold="false" italic="false" underline="true" embedFonts="false"/>
+					<shadow distance="5" angle="45" color="0xffffff" alpha="80" blur="10" strength="100"/>
+				</textInfo>
+				<effectInfo>
+					<entrance name="Swing" startEffectTime="0" entranceTime="6" effectTime="2"/>
+					<exit name="ToppleBackward" exitTime="2"/>
+					<interaction specifiedLoopTimes="false" loopTime="2" visibleAfterLoopOver="true"/>
+				</effectInfo>
+			</textData>
+		</info>
+		<hyperlink url="http://www.anvsoft.com" target="0"/>
+	</component>
+	<component type="textEffect">
+		<property x="0" y="200" width="" height="" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="1" />
+		<info url="">
+			<textData copyright="anvsoftTextEffectEditor">
+				<textInfo>
+					<text>
+you can create
+gorgeous photo flash slideshows in SWF format for
+watching on computer.
+					</text>
+					<format font="Arial" color="0xff6600" size="30" align="center" bold="false" italic="true" underline="false" embedFonts="false"/>
+					<shadow distance="5" angle="45" color="0x0000ff" alpha="80" blur="8" strength="100"/>
+				</textInfo>
+				<effectInfo>
+					<entrance name="FadeIn" startEffectTime="2" entranceTime="2" effectTime="2"/>
+					<exit name="FadeOut" exitTime="2"/>
+					<interaction specifiedLoopTimes="true" loopTime="2" visibleAfterLoopOver="true"/>
+				</effectInfo>
+			</textData>
+		</info>
+		<hyperlink url="http://www.photo-flash-maker.com/" target="0"/>
+	</component>
+	<component type="textEffect">
+		<property x="0" y="300" width="" height="" scaleX="1" scaleY="1" rotation="0" alpha="1" depth="2" />
+		<info url="">
+			<textData copyright="anvsoftTextEffectEditor">
+				<textInfo>
+					<text>
+test
+					</text>
+					<format font="Arial" color="0x00ffff" size="60" align="center" bold="false" italic="false" underline="false" embedFonts="false"/>
+					<shadow distance="5" angle="45" color="0x0000ff" alpha="80" blur="8" strength="100"/>
+				</textInfo>
+				<effectInfo>
+					<entrance name="Swing" startEffectTime="2" entranceTime="2" effectTime="2"/>
+					<exit name="ToppleBackward" exitTime="2"/>
+					<interaction specifiedLoopTimes="false" loopTime="2" visibleAfterLoopOver="false"/>
+				</effectInfo>
+			</textData>
+		</info>
+		<hyperlink url="http://www.go2album.com" target="0"/>
+	</component>
+</template>
