@@ -15,7 +15,7 @@
 			var flashvars = {
                 serverPath       : host + 'flashservice/gateway.php',
 				serverApi        : 'ServerApi.execute',
-				autoStart        : 'true',
+				autoStart        : 'false',
 				logo             : 'http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png',
                 title            : 'Subtitles Test',
                 clarityButton	 : 'disable',
@@ -42,7 +42,13 @@
 			}
 			function playerReady() {
 				player = document.getElementById("sewise_x_player");
+
+				setTimeout(function(){
+					player.doSeek(300);
+				}, 2000);
+				
 			}
+
             function switchVideo(){
                 player.toPlay("http://219.232.161.206:5080/flvseek/data/userdata/vismam/downfile/201307/020058352.flv", 'test toPlay', 0, true, '', 'xMRgJgIP', 'en');
 			}
