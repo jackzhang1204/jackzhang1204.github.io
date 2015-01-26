@@ -6,7 +6,11 @@
 	</head>
 	<body>
 		<div style="width: 600px; height: 400px; ">
-			<video id="video" width="600" height="400" controls="controls" src="http://210.140.170.230:8000/hls/1.m3u8"></video>
+			<object type="application/x-shockwave-flash" id="sewise_player" name="sewise_player" data="http://jackzhang1204.github.io/sewise/sewise_player/player/flash/SewisePlayer.swf" width="100%" height="100%">
+			<param name="allowfullscreen" value="true">
+			<param name="wmode" value="transparent">
+			<param name="allowscriptaccess" value="always">
+			<param name="flashvars" value="autoStart=true&type=flv&skin=http://jackzhang1204.github.io/sewise/sewise_player/player/flash/skins/vodWhite.swf&videoUrl=http://219.232.161.202:5080/flvseek/data/userdata/vod/resource/201402/OVNNwRk1.flv"></object>
 		</div>
 	</body>
 </html>
