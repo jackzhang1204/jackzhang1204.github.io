@@ -10,16 +10,35 @@
 <body>
 	<div id="player" style="width: 640px; height: 352px; ">
 		<script type="text/javascript">
+			var custom_strings = {
+				skinLoading:"X-正在加载皮肤……",
+                gettingVideoUrl:"X-正在获取视频地址……",
+                playerReady:"X-播放器准备完成……",
+                requestVideoData:"X-正在请求视频数据……",
+				noStreamFound:"X-没有找到视频流！",
+                programNotPublished:"X-本节目尚未发布",
+                requestShiftTimeData:"X-正在请求时移数据……",
+                noShiftTimeData:"X-没有时移数据，即将直播……",
+                skinLoadFailed:"X-皮肤加载失败……",
+                wrongSkinType:"X-皮肤类型不匹配",
+                seekForbidden:"X-抱歉，本节目不允许跳转播放",
+                disconnectReconnect:"X-连接断开，请检查您的网络，播放器正为您重连接……",
+                pauseForbidden:"X-抱歉，本节目时移未开启，无法暂停节目",
+                shiftTimePlayForbidden:"X-抱歉，本节目时移未开启，无法回看",
+                stringDefault:"X-默认"
+			};
+			
 			SewisePlayer.setup({
 				server: "vod",
 				type: "m3u8",
 				autostart: "true",
 				poster: "http://jackzhang1204.github.io/materials/poster.png",
-				videourl: "http://210.140.170.230:8000/hls/1.m3u8",
+				videourl: "http://g3.letv.cn/vod/v2/NzQvMzEvNTIvbGV0di11dHMvMTQvdmVyXzAwXzE2LTI2ODY4MjI5LWF2Yy0yMjk1OTQtYWFjLTMyMDAxLTY5Njg3NTMtMjM2MTYwMjg3LTIzZWM2YTJjNGVjZmNjNTYzZWJmYzFmMmQ1MjcwZTRmLTE0MDc3ODUzMzEwMzYubXA0?b=271&mmsid=2181963&tm=1415858824&key=ee1f384d73f341e23289643a14cd3610&platid=3&splatid=304&playid=0&tss=ios&vtype=21&cvid=964198564846&retry=1",
 		        skin: "vodWhite",
-		        title: "Live M3U8",
+		        title: "M3U8",
 		        claritybutton: "disable",
-		        lang: "zh_CN"
+		        lang: "zh_CN",
+		        customstrings: encodeURIComponent(JSON.stringify(custom_strings, "", "\t")),
 			}, "player");
 		</script>
 
